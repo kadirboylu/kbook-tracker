@@ -1,0 +1,15 @@
+.base {
+  @apply w-full my-10
+  flex flex-col items-start justify-center;
+
+  span {
+    @apply w-full select-none mb-1;
+  }
+
+  input {
+    @apply w-full
+    bg-white text-slate-700 
+    font-medium p-1
+    rounded-md outline-none;
+  }
+}
