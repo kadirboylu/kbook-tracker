@@ -1,0 +1,10 @@
+@tailwind base;
+
+body {
+  font-family: "Barlow", sans-serif;
+
+  @apply bg-slate-300 dark:bg-slate-400 text-lg font-medium;
+}
+
+@tailwind components;
+@tailwind utilities;
