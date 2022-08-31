@@ -1,0 +1,16 @@
+.base {
+  @apply flex items-center justify-center;
+
+  .icon {
+    @apply h-10 pr-2 rounded-r-lg
+    flex justify-center items-center
+    bg-white text-slate-700;
+  }
+
+  input {
+    @apply w-3/4 h-10 px-2
+    bg-white text-slate-700 
+    font-medium
+    rounded-l-lg outline-none;
+  }
+}
