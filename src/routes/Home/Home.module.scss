@@ -1,0 +1,13 @@
+.base {
+  @apply w-full 
+    flex flex-col items-center justify-center;
+}
+
+.logo {
+  @apply text-[120px] text-slate-600 drop-shadow-2xl
+  flex flex-col items-center justify-center;
+
+  svg {
+    @apply my-10;
+  }
+}
