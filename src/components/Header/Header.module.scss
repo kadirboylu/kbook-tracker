@@ -1,0 +1,63 @@
+header {
+  @apply md:flex
+    p-3 w-full h-[84px]
+  bg-slate-200 shadow-md 
+    items-center justify-between
+    select-none
+    transition-all;
+
+  a {
+    @apply md:w-fit w-[50];
+  }
+}
+
+.logo {
+  @apply m-3 cursor-pointer w-fit;
+}
+
+.menu {
+  @apply md:flex md:items-center md:pb-0 md:static md:z-auto md:w-auto md:pl-0 md:flex-row md:bg-slate-200
+  bg-slate-100
+    absolute left-0 top-[80px] w-full  
+    pb-8 pl-5 z-50
+    flex  flex-col grow justify-between
+    transition-all;
+
+  ul {
+    @apply md:mb-0 md:mt-0 md:flex-row
+    mb-4 mt-4 
+    flex  flex-col;
+
+    li {
+      @apply m-4 
+      w-fit
+      text-lg font-semibold 
+      transition-transform duration-500;
+
+      &:hover {
+        @apply text-gray-400 -translate-y-0.5;
+      }
+    }
+  }
+}
+
+.buttons {
+  @apply md:flex-row md:w-fit
+  w-full
+  flex flex-col;
+
+  a {
+    @apply md:w-fit w-[90%];
+  }
+
+  a > button {
+    @apply md:w-fit w-[100%];
+  }
+}
+
+.menu-btn {
+  @apply md:hidden
+  text-3xl 
+  inline-flex 
+  cursor-pointer;
+}
