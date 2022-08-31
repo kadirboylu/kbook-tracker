@@ -1,0 +1,15 @@
+.base {
+  @apply bg-slate-200 drop-shadow-2xl
+  p-3 w-full h-12
+  flex items-center justify-between
+  select-none
+  transition-all;
+
+  svg {
+    @apply mx-2 inline;
+  }
+
+  a {
+    @apply hover:opacity-70;
+  }
+}
