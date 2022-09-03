@@ -1,5 +1,5 @@
 .base {
-  @apply w-full my-10
+  @apply w-full mb-10
   flex flex-col items-start justify-center;
 
   span {
@@ -9,7 +9,11 @@
   input {
     @apply w-full
     bg-white text-slate-700 
-    font-medium p-1
+    font-medium p-1 relative
     rounded-md outline-none;
+  }
+
+  .seePassword {
+    @apply w-[20px] h-full absolute top-2 right-2 cursor-pointer;
   }
 }
