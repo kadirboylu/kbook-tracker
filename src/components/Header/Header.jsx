@@ -8,7 +8,6 @@ import styles from "./Header.module.scss";
 
 import { logo } from "@/assets/svg";
 import HeaderMenu from "./HeaderMenu";
-import { Button, Theme } from "@/components";
 import { toggleDropdown } from "@/store/bookSlice";
 
 export const Header = () => {
@@ -41,19 +40,6 @@ export const Header = () => {
         className={clsx(styles.menu, extraStyles.dropdown, extraStyles.menu)}
       >
         <HeaderMenu />
-        <div className={styles.buttons}>
-          {/* THEME SWITCHER */}
-          <div className={styles.theme}>
-            <Theme />
-          </div>
-          {/* AUTH BUTTONS */}
-          <Link className={styles.link} to="/login">
-            <Button text={"LOGIN"} theme={"primary"} />
-          </Link>
-          <Link className={styles.link} to="/signup">
-            <Button text={"SIGN UP"} theme={"primary"} />
-          </Link>
-        </div>
       </div>
     </header>
   );

@@ -1,8 +1,8 @@
 header {
-  @apply md:flex
-    p-3 w-full h-[84px]
+  @apply md:flex md:px-0
+    w-full h-[84px]
   bg-slate-200 shadow-md 
-    items-center justify-between
+    px-2 flex items-center justify-between
     select-none
     transition-all;
 
@@ -29,7 +29,7 @@ header {
     flex  flex-col;
 
     li {
-      @apply m-4 
+      @apply m-2 
       w-fit
       text-lg font-semibold 
       transition-transform duration-500;
@@ -42,7 +42,7 @@ header {
 }
 
 .buttons {
-  @apply md:flex-row md:w-fit
+  @apply md:flex-row md:w-fit md:items-center
   w-full
   flex flex-col;
 
@@ -53,6 +53,10 @@ header {
   a > button {
     @apply md:w-fit w-[100%];
   }
+
+  .settings {
+    @apply w-fit;
+  }
 }
 
 .menu-btn {
@@ -60,4 +64,21 @@ header {
   text-3xl 
   inline-flex 
   cursor-pointer;
+}
+
+.settings {
+  @apply md:mb-0 md:static md:p-2 md:ml-1
+  flex justify-end
+  absolute top-2 right-12
+  transition-all duration-500;
+
+  .settings-icon {
+    @apply w-8 h-8 p-1 
+    bg-slate-500 text-white
+    rounded-full;
+
+    &:hover {
+      @apply opacity-90;
+    }
+  }
 }
