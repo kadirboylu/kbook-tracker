@@ -3,7 +3,7 @@
   flex flex-col items-center justify-center;
 
   form {
-    @apply md:w-2/6 w-80 m-2
+    @apply md:w-2/6 min-w-[320px] m-2
     border-2 border-slate-50 rounded-md p-4;
 
     button {
