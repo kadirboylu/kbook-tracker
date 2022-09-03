@@ -1,0 +1,15 @@
+.base {
+  @apply w-full
+  flex flex-col items-center justify-center;
+
+  form {
+    button {
+      @apply w-full m-0 mb-4;
+    }
+  }
+}
+
+.form {
+  @apply md:w-2/6 m-2 min-w-[320px]
+  border-2 border-slate-50 rounded-md p-4;
+}
