@@ -13,7 +13,7 @@ function App() {
       <Toaster
         toastOptions={{
           className: "dark:bg-slate-700 dark:text-white mt-[50px]",
-          duration: 2000,
+          duration: 3000,
         }}
         position="top-right"
       />
