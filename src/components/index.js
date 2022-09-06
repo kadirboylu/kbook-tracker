@@ -9,3 +9,4 @@ export * from "./Forms";
 export * from "./BookCard";
 export * from "./BookContainer";
 export * from "./Loading";
+export * from "./Modal";
