@@ -6,6 +6,20 @@
   h2 {
     @apply font-bold text-center w-full;
   }
+
+  .author,
+  h2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  &:hover {
+    svg {
+      animation: bounce 2s infinite;
+    }
+  }
 }
 
 .book-cover {
@@ -37,10 +51,14 @@
   }
 }
 
-.author,
-h2 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+@keyframes bounce {
+  0% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(-3px);
+  }
 }

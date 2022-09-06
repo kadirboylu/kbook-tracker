@@ -3,6 +3,8 @@ import clsx from "clsx";
 
 import styles from "./BookCard.module.scss";
 
+import { Modal } from "@/Components";
+
 export const BookCard = ({ book }) => {
   const extraStyles = {
     dark: "dark:bg-slate-700 dark:text-white",
@@ -24,19 +26,20 @@ export const BookCard = ({ book }) => {
         {/* AUTHORS */}
         <h3>Author(s)</h3>
         <div className={styles.author}>
-          {book.volumeInfo?.authors &&
-            book.volumeInfo.authors.map((author, index) => {
-              const isLastAuthor =
-                book.volumeInfo.authors.indexOf(author) ===
-                book.volumeInfo.authors.length - 1;
+          {book.volumeInfo?.authors
+            ? book.volumeInfo.authors.map((author, index) => {
+                const isLastAuthor =
+                  book.volumeInfo.authors.indexOf(author) ===
+                  book.volumeInfo.authors.length - 1;
 
-              return (
-                <span key={index}>
-                  {author}
-                  {isLastAuthor ? "" : ", "}
-                </span>
-              );
-            })}
+                return (
+                  <span key={index}>
+                    {author}
+                    {isLastAuthor ? "" : ", "}
+                  </span>
+                );
+              })
+            : "No author found"}
         </div>
         {/* DESCRIPTION */}
         <div>
@@ -47,6 +50,7 @@ export const BookCard = ({ book }) => {
               : "There is no description about the book."}
           </p>
         </div>
+        <Modal book={book} />
       </div>
     </div>
   );
