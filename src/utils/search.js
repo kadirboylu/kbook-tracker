@@ -2,8 +2,8 @@ import { client, parameters } from "./axios";
 import toast from "react-hot-toast";
 
 export const searchBooks = async (q, index) => {
-  const { query, maxResults, startIndex, apiKey } = parameters;
-  const url = `${query}${q}${maxResults}30${startIndex}${index}${apiKey}`;
+  const { query, maxResults, startIndex, langRestrict, apiKey } = parameters;
+  const url = `${query}${q}${maxResults}30${startIndex}${index}${langRestrict}${apiKey}`;
 
   try {
     const { data } = await client.get(url);
