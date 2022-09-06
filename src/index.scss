@@ -6,5 +6,22 @@ body {
   @apply bg-slate-300 dark:bg-slate-400 text-lg font-medium;
 }
 
+*::-webkit-scrollbar {
+  @apply w-[6px];
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-800;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply rounded-lg bg-red-600 border-solid border-2 border-slate-100
+  dark:border-slate-800;
+}
+
+.popup-content {
+  @apply md:w-2/6 min-w-[320px] md:min-w-[500px];
+}
+
 @tailwind components;
 @tailwind utilities;
