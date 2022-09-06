@@ -1,5 +1,5 @@
 .base {
-  @apply w-full 
+  @apply w-full transition-all duration-1000
     flex flex-col items-center justify-center;
 }
 
