@@ -63,7 +63,6 @@ export const logout = async () => {
 export const update = async (data) => {
   try {
     await updateProfile(auth.currentUser, data);
-    toast.success("Profile updated successfully");
   } catch (e) {
     toast.error(e.message);
   }
@@ -96,7 +95,6 @@ export const resetPassword = async (email) => {
     await sendPasswordResetEmail(auth, email);
     toast.success("Password reset email sent");
   } catch (e) {
-    console.log(e.code);
     if (e.code === "auth/too-many-requests") {
       toast.error("Please wait before sending more requests.");
     } else if (e.code === "auth/user-not-found") {
