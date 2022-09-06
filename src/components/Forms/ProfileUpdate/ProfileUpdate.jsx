@@ -28,6 +28,7 @@ export const ProfileUpdate = () => {
           photoURL: values.photoURL,
         })
       );
+      toast.success("Profile updated successfully");
     },
   });
 

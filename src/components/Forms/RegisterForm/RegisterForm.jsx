@@ -66,7 +66,7 @@ export const RegisterForm = () => {
       />
       <Button
         disabled={
-          !formik.values.name ||
+          !formik.values.displayName ||
           !formik.values.identifier ||
           !formik.values.password ||
           formik.errors.identifier ||

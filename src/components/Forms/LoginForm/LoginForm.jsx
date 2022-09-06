@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
@@ -18,7 +18,8 @@ export const LoginForm = () => {
 
   const extraStyles = {
     form: "dark:border-slate-700",
-    verificationStyle: "md:w-2/6 w-70 text-justify p-4 rounded-lg bg-slate-200",
+    verificationStyle:
+      "md:w-2/6 w-[320px] md:min-w-[320px] text-justify p-4 rounded-lg bg-slate-200",
     verificationDark: "dark:bg-slate-700 dark:text-white",
   };
 
@@ -58,6 +59,17 @@ export const LoginForm = () => {
       }
     },
   });
+
+  useEffect(() => {
+    if (!isVerified) {
+      const resetUser = async () => {
+        await logout();
+        setIsVerified(() => true);
+      };
+
+      resetUser();
+    }
+  }, [formik.values.identifier, formik.values.password]);
 
   return (
     <>
