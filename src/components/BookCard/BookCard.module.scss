@@ -1,0 +1,46 @@
+.base {
+  @apply bg-slate-100 
+  m-2 p-2 rounded-md
+  flex flex-wrap items-center w-[360px] h-[400px];
+
+  h2 {
+    @apply font-bold text-center w-full;
+  }
+}
+
+.book-cover {
+  @apply w-[150px] h-[300px] flex m-2;
+
+  img {
+    @apply w-full;
+  }
+}
+
+.book-info {
+  @apply flex flex-col h-[300px] w-[calc(100%-175px)];
+
+  h3 {
+    @apply font-bold mt-2 underline;
+  }
+
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+
+    @apply text-sm;
+  }
+
+  .author {
+    @apply text-sm;
+  }
+}
+
+.author,
+h2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
