@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import styles from "./BookCard.module.scss";
 
-import { Modal } from "@/Components";
+import { Modal, DropdownMenu } from "@/Components";
 
 export const BookCard = ({ book }) => {
   const extraStyles = {
@@ -16,13 +16,18 @@ export const BookCard = ({ book }) => {
 
   return (
     <div className={clsx(styles.base, extraStyles.dark)}>
-      <h2>{book.volumeInfo.title}</h2>
+      {/* BOOK TİTLE */}
+      <div className="w-full h-[56px] flex items-center justify-center">
+        <h2>{book.volumeInfo.title}</h2>
+      </div>
       {/* BOOK COVER */}
       <div className={styles["book-cover"]}>
         <img src={imgURL} alt={book.volumeInfo.title} />
       </div>
       <div className={styles["book-info"]}>
-        {/* BOOK TİTLE */}
+        <div className="ml-4">
+          <DropdownMenu book={book} />
+        </div>
         {/* AUTHORS */}
         <h3>Author(s)</h3>
         <div className={styles.author}>

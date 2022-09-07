@@ -5,6 +5,8 @@ import { CgArrowLongRight } from "react-icons/cg";
 
 import styles from "./Modal.module.scss";
 
+import { DropdownMenu } from "@/Components";
+
 export const Modal = ({ book }) => {
   const extraStyles = {
     dark: "dark:bg-slate-800 dark:text-white",
@@ -19,7 +21,7 @@ export const Modal = ({ book }) => {
     <Popup
       trigger={
         <button className={styles.trigger}>
-          Click to see more <CgArrowLongRight />
+          <CgArrowLongRight /> Click to see more
         </button>
       }
       modal
@@ -39,6 +41,9 @@ export const Modal = ({ book }) => {
           <div className={styles.content}>
             <div className={styles["book-cover"]}>
               <img src={imgURL} alt={book.volumeInfo.title} />
+              <div className="mt-2 mb-4 ml-4">
+                <DropdownMenu book={book} />
+              </div>
             </div>
             <h3>Author(s)</h3>
             <p>

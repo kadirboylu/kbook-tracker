@@ -26,7 +26,7 @@
     flex flex-col;
 
     h3 {
-      @apply font-bold underline underline-offset-4;
+      @apply font-bold underline underline-offset-4 my-2;
     }
 
     p {
@@ -51,15 +51,17 @@
   @apply my-2 mx-1 p-1 text-sm bg-slate-500 text-white rounded-md;
 
   svg {
-    @apply inline ml-1;
+    @apply inline mr-1;
   }
 }
 
 .book-cover {
-  @apply w-[150px] h-[200px] flex my-5 float-left mx-auto md:m-5;
+  @apply w-[150px] h-[250px] 
+  flex flex-col justify-center items-center 
+  my-5 float-left mx-auto md:m-5;
 
   img {
-    @apply w-full;
+    @apply w-full text-xl;
   }
 }
 

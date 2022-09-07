@@ -1,8 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { Input, Button } from "@/components";
 import { passwordSchema } from "@/utils/yup";
@@ -11,7 +10,6 @@ import { logoutHandle } from "@/store/authSlice";
 
 export const ChangePassword = () => {
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const formik = useFormik({
@@ -22,7 +20,6 @@ export const ChangePassword = () => {
     validationSchema: passwordSchema,
     onSubmit: async (values) => {
       const res = await changePassword(values.newPassword);
-      console.log(res);
       if (res) {
         await logout();
         dispatch(logoutHandle());
