@@ -66,6 +66,7 @@ export const DropdownMenu = ({ book }) => {
         const newList = bookList.filter((item) => item.id !== id);
 
         await updateBooks(collectionId, {
+          name: user.displayName,
           uid: user.uid,
           books: [...newList],
         });
@@ -91,17 +92,23 @@ export const DropdownMenu = ({ book }) => {
         // if the book is not in the bookList, add it to the bookList and update the collection in firestore
         hasSameBook
           ? await updateBooks(collectionId, {
+              name: user.displayName,
               uid: user.uid,
               books: [...newList],
             })
           : await updateBooks(collectionId, {
+              name: user.displayName,
               uid: user.uid,
               books: [...newList, bookInfo],
             });
         toast.success("Book added to your collection!");
       } else {
         // if the user doesn't have a collection, create a new collection and add the book to the bookList
-        await addBooks({ uid: user.uid, books: [bookInfo] });
+        await addBooks({
+          name: user.displayName,
+          uid: user.uid,
+          books: [bookInfo],
+        });
         toast.success("Book added to your collection!");
       }
     }

@@ -41,7 +41,7 @@ export const Modal = ({ book }) => {
           <div className={styles.content}>
             <div className={styles["book-cover"]}>
               <img src={imgURL} alt={book.volumeInfo.title} />
-              <div className="mt-2 mb-4 ml-4">
+              <div className="my-2 ml-4">
                 <DropdownMenu book={book} />
               </div>
             </div>
