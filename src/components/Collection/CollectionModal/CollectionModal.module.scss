@@ -1,0 +1,78 @@
+.modal {
+  animation: fade 1s;
+
+  @apply bg-slate-100 max-h-[calc(100vh-200px)]
+  m-2 rounded-md;
+
+  .header {
+    @apply w-full border-b-2 border-gray-300 text-center p-1;
+
+    h2 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+
+      @apply w-[80%] py-2 m-auto h-[64px]
+      flex items-center justify-center
+      font-bold text-xl uppercase;
+    }
+  }
+
+  .content {
+    @apply w-full p-5 text-justify 
+    max-h-[calc(100vh-320px)] overflow-y-scroll
+    md:block
+    flex flex-col;
+
+    h3 {
+      @apply font-bold underline underline-offset-4 my-2;
+    }
+
+    p {
+      @apply text-sm;
+    }
+  }
+
+  .close {
+    @apply cursor-pointer  bg-slate-700 text-white
+    absolute right-5 top-5
+    text-2xl w-7 h-7 outline-0
+    flex items-center justify-center rounded-full;
+
+    &:hover {
+      @apply opacity-90;
+    }
+  }
+}
+
+.trigger {
+  @apply absolute top-2 right-2 
+  h-7 w-7 
+  bg-slate-100 text-slate-800 drop-shadow-lg text-center
+  text-2xl flex items-center justify-center font-light
+  rounded-full border-[1px] border-solid border-black;
+
+  svg {
+    @apply inline m-auto;
+  }
+}
+
+.book-cover {
+  @apply w-[150px] h-[250px] 
+  flex flex-col justify-center items-center 
+  my-5 mt-8 float-left mx-auto md:m-5;
+
+  img {
+    @apply w-full text-xl;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

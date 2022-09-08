@@ -11,3 +11,5 @@ export * from "./BookContainer";
 export * from "./Loading";
 export * from "./Modal";
 export * from "./DropdownMenu";
+export * from "./Carousel";
+export * from "./Collection";

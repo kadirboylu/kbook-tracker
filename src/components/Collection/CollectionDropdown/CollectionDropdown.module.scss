@@ -1,0 +1,30 @@
+.menu {
+  @apply bg-slate-200
+  w-[150px] text-base
+  flex flex-col 
+  absolute top-[-4px]
+  border-[1px] border-gray-400
+  border-b-0
+  rounded-b-md;
+}
+
+.menu-item {
+  @apply border-b-[1px] border-solid border-gray-400 
+  h-8 px-2 text-left outline-none
+  cursor-pointer;
+
+  &:hover {
+    @apply text-blue-400;
+  }
+
+  &:last-child {
+    @apply rounded-b-md;
+  }
+}
+
+.trigger {
+  @apply bg-slate-200 
+  w-[150px] ml-[-15px] h-9 text-base text-center
+  border-[1px] border-gray-400
+  rounded-md;
+}
