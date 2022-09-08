@@ -56,7 +56,7 @@
 }
 
 .book-cover {
-  @apply w-[150px] h-[250px] 
+  @apply w-[150px] md:h-[250px] relative
   flex flex-col justify-center items-center 
   my-5 float-left mx-auto md:m-5;
 

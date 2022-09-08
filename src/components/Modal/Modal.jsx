@@ -40,10 +40,10 @@ export const Modal = ({ book }) => {
           </div>
           <div className={styles.content}>
             <div className={styles["book-cover"]}>
-              <img src={imgURL} alt={book.volumeInfo.title} />
-              <div className="my-2 ml-4">
+              <div className="mb-2 ml-4">
                 <DropdownMenu book={book} />
               </div>
+              <img src={imgURL} alt={book.volumeInfo.title} />
             </div>
             <h3>Author(s)</h3>
             <p>
@@ -69,7 +69,7 @@ export const Modal = ({ book }) => {
                 : "There is no description about the book."}
             </p>
           </div>
-          <div className="h-[20px]"></div>
+          <div className="h-[20px] z-20"></div>
         </div>
       )}
     </Popup>

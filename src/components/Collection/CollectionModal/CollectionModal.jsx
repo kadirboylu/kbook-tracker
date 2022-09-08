@@ -36,10 +36,10 @@ export const CollectionModal = ({ book }) => {
           </div>
           <div className={styles.content}>
             <div className={styles["book-cover"]}>
-              <img src={book.imageLinks} alt={book.title} />
               <div className="my-2 ml-4">
                 <CollectionDropdown book={book} />
               </div>
+              <img src={book.imageLinks} alt={book.title} />
             </div>
             <h3>Author(s)</h3>
             <p>

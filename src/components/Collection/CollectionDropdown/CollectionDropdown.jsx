@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
-import Popup from "reactjs-popup";
 
 import styles from "./CollectionDropdown.module.scss";
 
@@ -18,6 +17,7 @@ export const CollectionDropdown = ({ book }) => {
   );
 
   const [text, setText] = useState("Choose Category");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const extraStyles = {
     menu: "dark:bg-slate-500 dark:text-white",
@@ -111,53 +111,48 @@ export const CollectionDropdown = ({ book }) => {
   }, [bookList]);
 
   return (
-    <Popup
-      trigger={
-        <button
-          className={clsx(
-            styles.trigger,
-            extraStyles.menu,
-            "dark:hover:text-blue-400"
-          )}
-        >
-          {text}
-        </button>
-      }
-      position="bottom left"
-      closeOnDocumentClick
-      on="hover"
-      mouseLeaveDelay={300}
-      mouseEnterDelay={0}
-      contentStyle={{ padding: "0px", border: "none" }}
-      arrow={false}
+    <div
+      onClick={() => setIsDropdownOpen(() => !isDropdownOpen)}
+      className="relative"
     >
-      <div className={clsx(styles.menu, extraStyles.menu)}>
-        {text !== "Wish List" && (
-          <button onClick={handleClick} className={styles["menu-item"]}>
-            Wish List
-          </button>
+      <button
+        className={clsx(
+          styles.trigger,
+          extraStyles.menu,
+          "dark:hover:text-blue-400"
         )}
-        {text !== "Books to read" && (
-          <button onClick={handleClick} className={styles["menu-item"]}>
-            Books to read
-          </button>
-        )}
-        {text !== "Have Read" && (
-          <button onClick={handleClick} className={styles["menu-item"]}>
-            Have Read
-          </button>
-        )}
-        {text !== "Reading Now" && (
-          <button onClick={handleClick} className={styles["menu-item"]}>
-            Reading Now
-          </button>
-        )}
-        {text !== "Choose Category" && (
-          <button onClick={handleClick} className={styles["menu-item"]}>
-            Remove
-          </button>
-        )}
-      </div>
-    </Popup>
+      >
+        {text}
+      </button>
+      {isDropdownOpen && (
+        <div className={clsx(styles.menu, extraStyles.menu)}>
+          {text !== "Wish List" && (
+            <button onClick={handleClick} className={styles["menu-item"]}>
+              Wish List
+            </button>
+          )}
+          {text !== "Books to read" && (
+            <button onClick={handleClick} className={styles["menu-item"]}>
+              Books to read
+            </button>
+          )}
+          {text !== "Have Read" && (
+            <button onClick={handleClick} className={styles["menu-item"]}>
+              Have Read
+            </button>
+          )}
+          {text !== "Reading Now" && (
+            <button onClick={handleClick} className={styles["menu-item"]}>
+              Reading Now
+            </button>
+          )}
+          {text !== "Choose Category" && (
+            <button onClick={handleClick} className={styles["menu-item"]}>
+              Remove
+            </button>
+          )}
+        </div>
+      )}
+    </div>
   );
 };

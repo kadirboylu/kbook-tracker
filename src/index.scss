@@ -3,7 +3,7 @@
 body {
   font-family: "Barlow", sans-serif;
 
-  @apply bg-slate-300 dark:bg-slate-400 text-lg font-medium overflow-x-hidden;
+  @apply bg-slate-300 dark:bg-slate-400 text-lg font-medium overflow-x-hidden ring-transparent;
 }
 
 *::-webkit-scrollbar {
