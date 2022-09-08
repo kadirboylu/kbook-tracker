@@ -11,5 +11,9 @@ const flickityOptions = {
 };
 
 export const Carousel = (props) => {
-  return <Flickity options={flickityOptions}>{props.children}</Flickity>;
+  return (
+    <Flickity className="row" options={flickityOptions}>
+      {props.children}
+    </Flickity>
+  );
 };

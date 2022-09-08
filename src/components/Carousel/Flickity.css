@@ -43,11 +43,13 @@
 
 .flickity-button {
   position: absolute;
+  background-color: white;
   border: none;
-  color: #fff;
+  color: #333;
 }
 
 .flickity-button:hover {
+  opacity: 0.7;
   cursor: pointer;
 }
 
@@ -68,23 +70,26 @@
 }
 
 .flickity-button-icon {
-  fill: #444;
+  fill: currentColor;
 }
 
 /* ---- previous/next buttons ---- */
 
 .flickity-prev-next-button {
-  top: 0;
-  bottom: 24px;
-  width: 44px;
-  border-radius: 4px;
+  top: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: orange;
+  /* vertically center */
+  transform: translateY(-50%);
 }
 
 .flickity-prev-next-button.previous {
-  left: -40px;
+  left: -35px;
 }
 .flickity-prev-next-button.next {
-  right: -40px;
+  right: -35px;
 }
 /* right to left */
 .flickity-rtl .flickity-prev-next-button.previous {
@@ -126,7 +131,7 @@
   width: 10px;
   height: 10px;
   margin: 0 8px;
-  background: #fff;
+  background: #333;
   border-radius: 50%;
   opacity: 0.25;
   cursor: pointer;
