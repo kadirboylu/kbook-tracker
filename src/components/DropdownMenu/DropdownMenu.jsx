@@ -146,18 +146,26 @@ export const DropdownMenu = ({ book }) => {
       arrow={false}
     >
       <div className={clsx(styles.menu, extraStyles.menu)}>
-        <button onClick={handleClick} className={styles["menu-item"]}>
-          Wish List
-        </button>
-        <button onClick={handleClick} className={styles["menu-item"]}>
-          Books to read
-        </button>
-        <button onClick={handleClick} className={styles["menu-item"]}>
-          Have Read
-        </button>
-        <button onClick={handleClick} className={styles["menu-item"]}>
-          Reading Now
-        </button>
+        {text !== "Wish List" && (
+          <button onClick={handleClick} className={styles["menu-item"]}>
+            Wish List
+          </button>
+        )}
+        {text !== "Books to read" && (
+          <button onClick={handleClick} className={styles["menu-item"]}>
+            Books to read
+          </button>
+        )}
+        {text !== "Have Read" && (
+          <button onClick={handleClick} className={styles["menu-item"]}>
+            Have Read
+          </button>
+        )}
+        {text !== "Reading Now" && (
+          <button onClick={handleClick} className={styles["menu-item"]}>
+            Reading Now
+          </button>
+        )}
         {text !== "Choose Category" && (
           <button onClick={handleClick} className={styles["menu-item"]}>
             Remove
