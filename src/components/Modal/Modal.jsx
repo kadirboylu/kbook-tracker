@@ -11,6 +11,7 @@ export const Modal = ({ book }) => {
   const extraStyles = {
     dark: "dark:bg-slate-800 dark:text-white",
     button: "dark:bg-slate-100 dark:text-slate-800",
+    trigger: "dark:bg-slate-500 dark:text-slate-100",
   };
 
   const imgURL = book.volumeInfo.imageLinks?.thumbnail
@@ -20,7 +21,7 @@ export const Modal = ({ book }) => {
   return (
     <Popup
       trigger={
-        <button className={styles.trigger}>
+        <button className={clsx(styles.trigger, extraStyles.trigger)}>
           <CgArrowLongRight /> Click to see more
         </button>
       }

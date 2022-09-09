@@ -47,7 +47,8 @@
 }
 
 .trigger {
-  @apply my-2 mx-1 p-1 text-sm bg-slate-500 text-white rounded-md;
+  @apply my-2 mx-1 p-1 text-sm bg-slate-200 
+   rounded-md border-[1px] border-solid border-gray-400;
 
   svg {
     @apply inline mr-1;
