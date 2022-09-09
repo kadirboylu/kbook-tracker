@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import toast from "react-hot-toast";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -15,7 +16,6 @@ import {
   collection,
   doc,
   addDoc,
-  deleteDoc,
   updateDoc,
   onSnapshot,
   query,
@@ -23,7 +23,6 @@ import {
 } from "firebase/firestore";
 import { store } from "@/store";
 
-import toast from "react-hot-toast";
 import {
   setBookList,
   setCollectionID,
