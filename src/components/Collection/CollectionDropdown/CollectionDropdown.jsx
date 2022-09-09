@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import toast from "react-hot-toast";
 import clsx from "clsx";
 
 import styles from "./CollectionDropdown.module.scss";
 
 import { addBooks, updateBooks } from "@/utils/firebase";
 import { useEffect } from "react";
-import toast from "react-hot-toast";
+import { useOutsideClick } from "@/hook/useOutsideClick";
 
 export const CollectionDropdown = ({ book }) => {
   const navigate = useNavigate();
+  const ref = useRef();
   const user = useSelector((store) => store.auth.user);
   const { bookList, hasCollection, collectionId } = useSelector(
     (store) => store.firestore
@@ -18,6 +20,10 @@ export const CollectionDropdown = ({ book }) => {
 
   const [text, setText] = useState("Choose Category");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useOutsideClick(ref, () => {
+    setIsDropdownOpen(() => false);
+  });
 
   const extraStyles = {
     menu: "dark:bg-slate-500 dark:text-white",
@@ -113,6 +119,7 @@ export const CollectionDropdown = ({ book }) => {
   return (
     <div
       onClick={() => setIsDropdownOpen(() => !isDropdownOpen)}
+      ref={ref}
       className="relative"
     >
       <button
