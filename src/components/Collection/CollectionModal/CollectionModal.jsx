@@ -13,6 +13,8 @@ export const CollectionModal = ({ book }) => {
     button: "dark:bg-slate-100 dark:text-slate-800",
   };
 
+  const overlayStyle = { background: "rgba(0,0,0,0.75)" };
+
   return (
     <Popup
       trigger={
@@ -20,6 +22,7 @@ export const CollectionModal = ({ book }) => {
           <BsInfo />
         </button>
       }
+      {...{ overlayStyle }}
       modal
       nested
     >

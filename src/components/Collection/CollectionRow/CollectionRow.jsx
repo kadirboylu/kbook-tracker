@@ -19,17 +19,19 @@ export const CollectionRow = ({ category }) => {
   }, [bookList, category]);
 
   return (
-    <div className="relative w-full select-none my-2 min-h-[200px]">
-      <h2 className="font-semibold text-xl my-4">{category}</h2>
-      <Carousel>
-        {bookList.map((book) => {
-          if (book.category === category) {
-            return <CollectionCard key={book.id} book={book} />;
-          }
-        })}
-      </Carousel>
+    <div className="relative w-full select-none my-4 min-h-[200px]">
+      <h2 className="font-semibold text-xl mb-6">{category}</h2>
+      <div className="mb-6">
+        <Carousel>
+          {bookList.map((book) => {
+            if (book.category === category) {
+              return <CollectionCard key={book.id} book={book} />;
+            }
+          })}
+        </Carousel>
+      </div>
       {!show && (
-        <div className="absolute text-center text-gray-500 h-full top-[20px] w-full  flex items-center justify-center">
+        <div className="absolute text-center text-gray-500 h-[180px] top-[20px] w-full  flex items-center justify-center">
           <p>There are no books in this category.</p>
         </div>
       )}

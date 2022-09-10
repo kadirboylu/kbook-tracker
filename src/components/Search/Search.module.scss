@@ -8,7 +8,7 @@
   }
 
   input {
-    @apply w-3/4 h-10 px-2
+    @apply w-2/4 min-w-[300px] h-10 px-2
     bg-white text-slate-700 
     font-medium
     rounded-l-lg outline-none;

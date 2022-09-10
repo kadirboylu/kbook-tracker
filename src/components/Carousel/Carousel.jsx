@@ -8,6 +8,7 @@ const flickityOptions = {
   contain: true,
   pageDots: false,
   draggable: true,
+  cellAlign: "left",
 };
 
 export const Carousel = (props) => {

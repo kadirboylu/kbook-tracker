@@ -1,7 +1,7 @@
 .book-cover {
-  @apply w-[150px] h-[200px] flex m-2;
+  @apply w-[128px] h-[192px] mx-2 pt-2;
 
   img {
-    @apply w-full;
+    @apply h-full w-full;
   }
 }

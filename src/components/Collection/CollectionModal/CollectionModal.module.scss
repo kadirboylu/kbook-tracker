@@ -46,7 +46,7 @@
 }
 
 .trigger {
-  @apply absolute top-2 right-2 
+  @apply absolute top-3 right-2 
   h-7 w-7 
   bg-slate-100 text-slate-800 drop-shadow-lg text-center
   text-2xl flex items-center justify-center font-light
@@ -58,12 +58,12 @@
 }
 
 .book-cover {
-  @apply w-[150px] h-[250px] 
+  @apply w-[128px] h-[250px]
   flex flex-col justify-center items-center 
   my-5 mt-8 float-left mx-auto md:m-5;
 
   img {
-    @apply w-full text-xl;
+    @apply h-[192px] w-[128px] text-xl;
   }
 }
 

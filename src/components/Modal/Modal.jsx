@@ -18,6 +18,8 @@ export const Modal = ({ book }) => {
     ? book.volumeInfo.imageLinks.thumbnail
     : "https://books.google.com.tr/googlebooks/images/no_cover_thumb.gif";
 
+  const overlayStyle = { background: "rgba(0,0,0,0.75)" };
+
   return (
     <Popup
       trigger={
@@ -25,6 +27,7 @@ export const Modal = ({ book }) => {
           <CgArrowLongRight /> Click to see more
         </button>
       }
+      {...{ overlayStyle }}
       modal
       nested
     >

@@ -56,12 +56,12 @@
 }
 
 .book-cover {
-  @apply w-[150px] md:h-[250px] relative
+  @apply w-[128px] md:h-[250px] relative
   flex flex-col justify-center items-center 
   my-5 float-left mx-auto md:m-5;
 
   img {
-    @apply w-full text-xl;
+    @apply h-[192px] w-[128px] text-xl;
   }
 }
 
